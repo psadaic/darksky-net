@@ -1,6 +1,6 @@
 {
   "name": "darksky-net",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "A dead simple darksky.net API wrapper for Nodejs using method chaining and promises.",
   "main": "darksky-net.js",
   "dependencies": {

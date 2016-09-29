@@ -63,6 +63,7 @@ class DarkSkyNET {
         return new Promise((resolve, reject) => {
             this.generateReqUrl();
             req(this.url, (err, res, body) => {
+                console.log(res);
                 if (!err && res.statusCode == 200) {
                     resolve(body);
                 } else {

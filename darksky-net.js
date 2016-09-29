@@ -67,10 +67,10 @@ class DarkSkyNET {
                 if (!err && res.statusCode == 200) {
                     resolve(body);
                 } else {
-                    if(res.statusCode && res.statusMessage) {
-                        reject(`Script Error: ${err} \nAPI Response: ${res.statusCode} :: ${res.statusMessage}`);
+                    if(res === undefined || res === null) {
+                        reject(`Script Error: ${err} \nAPI Response: res undefined`);
                     } else {
-                        reject(`Script Error: ${err} \nAPI Response: no response given (statusCode/statusMessage?)`);   
+                        reject(`Script Error: ${err} \nAPI Response: ${res.statusCode} :: ${res.statusMessage}`);   
                     }
                 }
             })

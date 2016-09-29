@@ -63,10 +63,11 @@ class DarkSkyNET {
         return new Promise((resolve, reject) => {
             this.generateReqUrl();
             req(this.url, (err, res, body) => {
-                if(res.statusCode !== 200 || err){
-                    reject(`Script Error: ${err} \nAPI Response: ${res.statusCode} :: ${res.statusMessage}`)
+                if (!err && res.statusCode == 200) {
+                    resolve(body);
+                } else {
+                    reject(`Script Error: ${err} \nAPI Response: ${res.statusCode} :: ${res.statusMessage}`);
                 }
-                resolve(body)
             })
         })
     }
